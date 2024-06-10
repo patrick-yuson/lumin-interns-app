@@ -4,25 +4,36 @@ import { ref } from 'vue'
 
 const fieldInterests = ref([
     { field: 'Machine Learning' },
-    { field: 'Data Analysis' }
+    { field: 'Data Analysis' },
+    { field: 'Artificial Intelligence' }
 ])
 </script>
 
 <template>
     <div className="patrick-interests-div">
-        <!-- <p 
+
+    </div>
+    <div className="patrick-interests-subheader">Fields of Interest</div>
+    <div className="patrick-interests-row">
+        <PatrickInterestCard
             v-for="(interest, index) in fieldInterests"
             :key="index"
             :field="interest.field"
-        ></p> -->
-        <div>Yes</div>
-        <div>Yes</div>
+        />
     </div>
 </template>
 
 <style>
 .patrick-interests-div {
+    margin-top: 40px;
+}
+.patrick-interests-subheader {
+    color: #626262;
+    font-size: 20px;
+}
+.patrick-interests-row {
     display: flex;
     justify-content: space-between;
+    margin-top: 20px;
 }
 </style>

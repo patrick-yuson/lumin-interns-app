@@ -12,12 +12,19 @@ const props = defineProps({
 </template>
 
 <style>
+@import '../../styles/ColorPalette.css';
+
 .patrick-interest-card {
-    height: 50px;
-    width: 50px;
-    background-color: black;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
+  height: 60px;
+  width: 125px;
+  padding: 5px;
+  border: 1px solid black;
+  border-radius: 30px;
+  text-align: center;
+  display: flex;
+  align-items: center; 
+  justify-content: center; 
+  font-weight: 500;
 }
+
 </style>

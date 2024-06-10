@@ -9,8 +9,8 @@ import PatrickInterestFields from './PatrickInterestFields.vue';
                 <div className="patrick-card-body">
                     <p>Hey! My name is Patrick Yuson, and I'm a rising Fourth Year at the University of Virginia. I am currently pursuing a double major in Computer Science and Cognitive Science.</p>
                 </div>
+            <PatrickInterestFields />
         </div>
-        <PatrickInterestFields />
 </template>
 
 <style scoped>
