@@ -1,0 +1,5 @@
+@import url(ColorPalette.css);
+
+body {
+    background-color: var(--yellow1);
+}
