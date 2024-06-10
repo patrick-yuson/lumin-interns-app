@@ -1,0 +1,21 @@
+.counter-button {
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--darkgreen1);
+    border-radius: 50%;
+    transition: 0.3s;
+    border: none;
+}
+
+.counter-button:hover {
+    background-color: var(--darkgreen3);
+}
+
+.counter-button p {
+    color: var(--white1);
+    font-size: 28px;
+    user-select: none;
+}
