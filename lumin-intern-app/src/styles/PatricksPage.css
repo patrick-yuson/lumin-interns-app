@@ -1,48 +1,6 @@
 @import url(ColorPalette.css);
 
-.body {
-    margin: 0;
-}
-
-.patrick-main {
+.patrick-font {
     font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
 }
 
-.patrick-top {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    margin-top: 30px;
-}   
-
-.patrick-header {
-    color: var(--yellow1);
-    font-size: 100px;
-    text-align: right;
-    margin: 0px;
-}
-
-.patrick-subheader {
-    color: #626262;
-    font-size: 25px;
-}
-
-.patrick-top-card {
-    border-radius: 30px;
-    padding: 30px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
-
-.patrick-profile-image:hover {
-    transform: scale(1.01);
-}
-
-.patrick-profile-image {
-    object-fit: cover;
-    overflow: hidden;
-    height: 500px;
-    width: 500px;
-    border-radius: 200px;
-    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    transition: transform 0.3s ease-in-out;
-}
