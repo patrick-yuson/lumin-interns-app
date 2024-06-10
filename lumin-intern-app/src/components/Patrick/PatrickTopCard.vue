@@ -1,8 +1,8 @@
 <script setup>
+import PatrickInterestFields from './PatrickInterestFields.vue';
 </script>
 
 <template>
-    <div className="patrick-top-left">
         <div className="patrick-top-card">
             <h1 className="patrick-header">Patrick Yuson</h1>
             <div className="patrick-subheader">Software Engineering Intern at Lumin</div>
@@ -10,22 +10,15 @@
                     <p>Hey! My name is Patrick Yuson, and I'm a rising Fourth Year at the University of Virginia. I am currently pursuing a double major in Computer Science and Cognitive Science.</p>
                 </div>
         </div>
-        
-    </div>
+        <PatrickInterestFields />
 </template>
 
 <style scoped>
 @import '../../styles/ColorPalette.css';
 
-.patrick-top-left {
-    max-width: 600px;
-    display: flex;
-    
-}
-
 .patrick-header {
     color: var(--yellow1);
-    font-size: 75px;
+    font-size: 50px;
     text-align: left;
     margin: 0px;
 }

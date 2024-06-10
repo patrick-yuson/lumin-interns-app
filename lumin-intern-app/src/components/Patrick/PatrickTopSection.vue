@@ -1,10 +1,13 @@
 <script setup>
 import PatrickTopCard from './PatrickTopCard.vue'
+import PatrickInterestFields from './PatrickInterestFields.vue';
 </script>
 
 <template>
     <div className="patrick-top">
-        <PatrickTopCard />
+        <div className="patrick-top-left">
+            <PatrickTopCard />
+        </div>
         <div className="patrick-picture-card">
         <img 
             src="../../assets/Patrick-Headshot.jpg" 
@@ -21,6 +24,13 @@ import PatrickTopCard from './PatrickTopCard.vue'
     align-items: center;
     margin-top: 30px;
 }   
+
+.patrick-top-left {
+    height: 400px;
+    width: 600px;
+    align-items: center;
+    justify-content: center;
+}
 
 .patrick-profile-image:hover {
     transform: scale(1.01);
