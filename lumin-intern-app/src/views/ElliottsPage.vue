@@ -1,9 +1,11 @@
 <script setup>
     import '../styles/ElliottsPage.css';
     import CounterButton from '../components/CounterButton.vue'
+    import BackButton from '../components/BackButton.vue'
 </script>
 
 <template>
+    <BackButton/>
     <div class="elliott-main">
         <div class="elliott-intro-card">
             <img src="/src/assets/elliott_looking_cute.jpeg" class="elliott-intro-card-img"/>
