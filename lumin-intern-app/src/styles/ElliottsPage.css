@@ -1,5 +1,56 @@
 @import url(ColorPalette.css);
 
 body {
-    background-color: var(--yellow1);
+    margin: 0px !important;
+}
+
+.elliott-main {
+
+    background-color: var(--white1);
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.elliott-intro-card {
+    height: 800px;
+    width: 1650px;
+    background-color: var(--white3);
+    border-radius: 32px;
+    animation: fade-in 0.8s 0.2s normal forwards;
+    opacity: 0%;
+    display: flex;
+    align-items: center;
+    padding: 32px;
+    box-sizing: border-box;
+    gap: 16px;
+}
+
+.elliott-intro-card-details {
+    width: 100%;
+    height: 100%;
+    border: 2px solid red;
+}
+
+@keyframes fade-in {
+    0% {
+        transform: translateY(10%);
+        opacity: 0%;
+    }
+    100% {
+        opacity: 100%;
+    }
+}
+
+.elliott-intro-card-img {
+    height: 100%;
+    border-radius: 18px;
+}
+
+h1 {
+
 }

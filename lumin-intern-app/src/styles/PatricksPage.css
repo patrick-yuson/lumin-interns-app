@@ -1,0 +1,5 @@
+@import url(ColorPalette.css);
+
+.patrick-header {
+    color: var(--yellow1);
+}
