@@ -1,15 +1,27 @@
 <script setup>
+import PatrickCounterButtons from './PatrickCounterButtons.vue'
+import { useCounterStore } from '@/stores/counter';
+import { storeToRefs } from 'pinia'
+import { ref } from 'vue'
+
+const store = useCounterStore()
+const { count, doubleCount } = storeToRefs(store)
+const handleDuplicate = () => {
+    count.value = doubleCount.value
+}
+
 </script>
 
 <template>
     <div class="patrick-counter-div">
         <div class="patrick-text-div">
             <div class="patrick-counter-text">
-                This counter is being updated by Pinia:
+                This counter is being accessed through Pinia:
             </div>
             <div class="patrick-count">
-                10
+                {{ count }}
             </div>
+            <PatrickCounterButtons @duplicate="handleDuplicate"/>
         </div>
     </div>
 </template>
@@ -35,12 +47,12 @@
 }
 
 .patrick-counter-text {
-    font-size: 40px;
+    font-size: 30px;
 }
 
 .patrick-count {
     font-size: 60px;
-    margin-left: 225px;
+    margin-left: 125px;
     color: var(--yellow1)
 }
 </style>
