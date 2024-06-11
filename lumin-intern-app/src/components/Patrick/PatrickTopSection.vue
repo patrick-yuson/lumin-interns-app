@@ -1,6 +1,5 @@
 <script setup>
 import PatrickTopCard from './PatrickTopCard.vue'
-import PatrickInterestFields from './PatrickInterestFields.vue';
 </script>
 
 <template>
@@ -20,7 +19,6 @@ import PatrickInterestFields from './PatrickInterestFields.vue';
 <style scoped>
 .patrick-top {
     display: flex;
-    justify-content: space-around;
     align-items: center;
     margin-top: 30px;
 }   
