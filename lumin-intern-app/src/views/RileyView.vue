@@ -1,144 +1,134 @@
 <script setup>
+//reactive only works for non primitive data types
+//in the script section you have to use value to access a reactive element
+//vue uses proxies to create reactive data, ref function return an object with itself as the value 
     import '../styles/RileysPage.css';
-    import { ref, computed, reactive } from 'vue'
-    //reactive only works for non primitive data types
+    import mainCard from '../components/Riley/mainCard.vue';
+    import favorites from '../components/Riley/favorites.vue';
+    import counter from '../components/Riley/counter.vue';
+    import copyMe from '../components/Riley/copyMe.vue';
+    import contactMe from '../components/Riley/contactMe.vue';
+    import { ref, computed, reactive, onMounted } from 'vue';
+    const isHovered = ref(false);
+    const msg = ref("")
 
-    const charCount = computed(() => {
-        return newFav.value.length
-    })
-
-    const msg = ref('')
-    const favorites = ref([
-        {id:1, label:"pink"},
-        {id:2, label:"dogs"},
-        {id:3, label:"bridgerton"}
-    ])
-
-    const newFav = ref("")
-    const editing = ref(false)
-    //in the script section you have to use value to access a reactive element
-    //vue uses proxies to create reactive data, ref function return an object with itself as the value 
-    const saveFav = () => {
-        favorites.value.push({id: favorites.length + 1, label: newFav.value})
-        newFav.value = ""
-    }
-
-    const state = reactive({count: 0})
-    const increment = () => {
-        state.count++
-    }
 </script>
 
 <style>
-    .header{
-        text-align: center;
+    .back-button{
+        font-size: 30px;
+        padding:5px;
+        color: var(--black5);
     }
 
-    .image{
-        width:25%;
-        margin: 20px;
-    }
-
-    .image-container{
+    .goBack{
         text-align:center;
     }
-    .text{
+
+    .myFavThings{
+        color: var(--black4);
+    }
+
+    .hovered{
+        border: 1px solid light grey;
+        border-radius: 5px;
+    }
+    
+    .page-container{
+        display:flex;
+        flex-direction: column;
+        align-items: center; 
+        justify-content: center;
+    }
+
+    .greeting-div{
+        text-align:center;
+        background-color: var(--lightgreen1);
+        width:100%;
+    }
+
+    .greeting{
+        font-size:80px;
+        color: var(--black5);
+    }
+ 
+    .title{
+        font-size: 30px;
+        margin-bottom:30px;
+        color: var(--black5);
+    }
+
+    .title2{
         font-size: 20px;
-        font-weight: normal;
-        text-align:center;
-    }
-
-    .surprise{
-        margin-top:10px;
-    }
-
-    .links{
-        margin:45px;
-        text-align:center;
-    }
-
-    .input{
-        margin-bottom:15px;
-    }
-
-    .button{
-        background-color: lightblue;
-        font-size: 20px;
-        padding:15px;
-        margin: 10px;
+        margin-bottom:5px;
+        margin-top:5px;
     }
 
     .my-container{
-        width:50%;
+        padding-top:100px;
+        width: 100%;
+        max-width: 1200px;
         margin: 0 auto;
+        display: flex;
+    }
+    .left-container{
+        flex: 1;
+        padding-right: 50px;
+        border-right: 1px solid lightgrey;
+    }
+    .right-container{
+        flex: 1;
+        padding-left: 50px;
     }
 
 </style>
 
 <template>
-        <div className = "page-container">
-            <div className="my-container">
-                <div className="title-container">
-                    <h1 className = "header"> Riley Washington</h1>
+
+        <div class="greeting-div">
+                <span class="greeting">Hello World...</span>
+        </div>
+
+        <div class = "page-container">
+            <div class ="my-container">
+
+                <div class="left-container">
+                    <mainCard />
                 </div>
                 
-                <div className="image-container">
-                    <img className = "image" src="https://media.licdn.com/dms/image/D4D03AQEAqtRGoqiM4g/profile-displayphoto-shrink_400_400/0/1711383312553?e=1723680000&v=beta&t=QCP0TjQ1hz_nd84Hypnn_-1vEWJPuEthCE2ZhqpDsQk"> 
-                </div>
-
-                <div className="text-container">
-                    <h1 className = "text"> Riley is a recent graduate of Columbia University. She loves to practice and perform jazz music, and spends
-                        much of her freetime learning new coding and spoken languages. She has recently moved to Charlottesville, VA to pursue a career in 
-                        software engineering at Lumin. 
-                    </h1>
-                </div>
-
-                <div>
-                    <h2>Favorites</h2>
-                    <ul>
-                        <li v-for="({id, label}, index) in favorites" :key="id">{{ label }}</li>
-                    </ul>
-                    <p>What's your favorite? Add it to my list</p>
-
-                    <form 
-                        class="add-item-form"
-                        v-on:submit.prevent="saveFav"
-                    >
-                        <input 
-                            v-model.trim="newFav"
-                            type="text" 
-                            className = "input" 
-                            placeholder="Type Here"
-                        >
-                        <button
-                            :disabled="newFav.length === 0"
-                            class = "btn btn-primary"
-                        >
-                            Submit
-                        </button>
-                    </form>
-
-                    <p class = "counter">
-                        {{ charCount }}/50
-                    </p>
-
+                <div class="right-container">
                     <div>
-                        {{ state.count }}
+                        <div class = "title">
+                            I've been learning Vue, Check it out:
+                        </div>
                     </div>
-                        
-                    <br />
 
-                    <button @click="increment">
-                        Click me
-                    </button>
+                    <div class="hovered" v-if="isHovered">
+                        You can click here!
+                    </div>
+                    <div class = "title2" @mouseover="isHovered = true" @mouseout="isHovered = false">
+                        <a class = "myFavThings" href="https://www.youtube.com/watch?v=2G6dd7ikrXs" target="_blank">These are a few of my favorite things:</a>
+                    </div>
+                    
+                    <favorites />
 
+                    <div class = "title2">
+                            And a mysterious button...
+                    </div>
+
+                    <counter />
+
+                    <div class = "title2">
+                            And a mysterious textbox...
+                    </div>
+                    <copyMe />
+    
                 </div>
 
-                <div className="links">
-                    <h2 class = "surprise">{{ msg }}</h2>
-                    <input class = "input" v-model="msg" placeholder="Try typing here">
-                    <a className = "button" href="https://www.linkedin.com/in/riley-washington-349765255">LinkedIn</a>
-                </div>
             </div>
-        </div>   
+        </div>
+        <div>
+            <contactMe /> 
+        </div>
+
 </template>
