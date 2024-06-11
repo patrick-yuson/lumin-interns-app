@@ -8,6 +8,7 @@
     import counter from '../components/Riley/counter.vue';
     import copyMe from '../components/Riley/copyMe.vue';
     import contactMe from '../components/Riley/contactMe.vue';
+    import Timer from '../components/Riley/Timer.vue';
     import { ref, computed, reactive, onMounted } from 'vue';
     const isHovered = ref(false);
     const msg = ref("")
@@ -126,6 +127,9 @@
                 </div>
 
             </div>
+        </div>
+        <div>
+            <Timer />
         </div>
         <div>
             <contactMe /> 
