@@ -23,7 +23,7 @@ const fieldInterests = ref([
     </div>
 </template>
 
-<style>
+<style scoped>
 .patrick-interests-div {
     margin-top: 40px;
 }
@@ -34,6 +34,6 @@ const fieldInterests = ref([
 .patrick-interests-row {
     display: flex;
     justify-content: space-between;
-    margin-top: 20px;
+    margin-top: 10px;
 }
 </style>

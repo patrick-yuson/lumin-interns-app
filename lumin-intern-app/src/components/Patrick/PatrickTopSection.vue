@@ -28,11 +28,12 @@ const hover = ref(false)
     align-items: center;
     justify-content: space-around;
     margin-top: 30px;
+    height: 450;
 }   
 
 .patrick-top-left {
-    height: 400px;
-    width: 600px;
+    /* height: 400px; */
+    max-width: 600px;
     align-items: center;
     justify-content: center;
 }
@@ -44,9 +45,9 @@ const hover = ref(false)
 .patrick-profile-image {
     object-fit: cover;
     overflow: hidden;
-    height: 500px;
-    width: 500px;
-    border-radius: 200px;
+    height: 428px;
+    width: 428px;
+    border-radius: 225px;
     box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     transition: transform 0.3s ease-in-out;
 }

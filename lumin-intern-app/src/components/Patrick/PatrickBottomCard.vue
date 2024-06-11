@@ -36,7 +36,8 @@ const data = ref([
             :position="endpoint.position"
             :company="endpoint.company"
             :description="endpoint.description"
-        />
+        >
+        </PatrickBottomCardDetail>
     </div>
 </template>
 
@@ -46,6 +47,7 @@ const data = ref([
     padding: 30px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     max-width: 540px;
+    margin-left: 43px;
 }
 
 .patrick-header {

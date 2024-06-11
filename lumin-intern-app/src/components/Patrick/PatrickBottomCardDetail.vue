@@ -1,5 +1,5 @@
 <script setup>
-import { defineProps } from 'vue'
+import { ref, defineProps } from 'vue'
 const props = defineProps({
     position: { type: String },
     company: { type: String },
@@ -8,16 +8,18 @@ const props = defineProps({
 </script>
 
 <template>
-    <div className="patrick-bottom-subheader"><strong>{{ position }}</strong>
-        <div v-if="company != ''">
-            <i>FilExcellence</i>
+    <div>
+        <div className="patrick-bottom-subheader"><strong>{{ position }}</strong>
+            <div v-if="company != ''">
+                <i>FilExcellence</i>
+            </div>
         </div>
+        <ul 
+            v-for="(text, index) in description"
+            :key="index"
+        ><li>{{ text }}</li>
+        </ul>
     </div>
-    <ul 
-        v-for="(text, index) in description"
-        :key="index"
-    ><li>{{ text }}</li>
-    </ul>
 </template>
 
 <style>
