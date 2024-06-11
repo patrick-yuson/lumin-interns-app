@@ -1,6 +1,11 @@
 <script setup>
     import '../styles/RileysPage.css';
-    import { ref } from 'vue'
+    import { ref, computed, reactive } from 'vue'
+    //reactive only works for non primitive data types
+
+    const charCount = computed(() => {
+        return newFav.value.length
+    })
 
     const msg = ref('')
     const favorites = ref([
@@ -10,6 +15,18 @@
     ])
 
     const newFav = ref("")
+    const editing = ref(false)
+    //in the script section you have to use value to access a reactive element
+    //vue uses proxies to create reactive data, ref function return an object with itself as the value 
+    const saveFav = () => {
+        favorites.value.push({id: favorites.length + 1, label: newFav.value})
+        newFav.value = ""
+    }
+
+    const state = reactive({count: 0})
+    const increment = () => {
+        state.count++
+    }
 </script>
 
 <style>
@@ -82,17 +99,39 @@
                         <li v-for="({id, label}, index) in favorites" :key="id">{{ label }}</li>
                     </ul>
                     <p>What's your favorite? Add it to my list</p>
-                    <input 
-                        v-model.trim="newFav"
-                        v-on:keyup.enter="favorites.push({id: favorites.length + 1, label: newFav})" 
-                        type="text" 
-                        className = "input" 
-                        placeholder="Type Here"
+
+                    <form 
+                        class="add-item-form"
+                        v-on:submit.prevent="saveFav"
                     >
-                    <button 
-                        v-on:click="favorites.push({id: favorites.length + 1, label: newFav})">
-                        Submit
+                        <input 
+                            v-model.trim="newFav"
+                            type="text" 
+                            className = "input" 
+                            placeholder="Type Here"
+                        >
+                        <button
+                            :disabled="newFav.length === 0"
+                            class = "btn btn-primary"
+                        >
+                            Submit
+                        </button>
+                    </form>
+
+                    <p class = "counter">
+                        {{ charCount }}/50
+                    </p>
+
+                    <div>
+                        {{ state.count }}
+                    </div>
+                        
+                    <br />
+
+                    <button @click="increment">
+                        Click me
                     </button>
+
                 </div>
 
                 <div className="links">
