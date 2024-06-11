@@ -1,5 +1,8 @@
 <script setup>
 import PatrickTopCard from './PatrickTopCard.vue'
+import { ref } from 'vue'
+
+const hover = ref(false)
 </script>
 
 <template>
@@ -7,12 +10,15 @@ import PatrickTopCard from './PatrickTopCard.vue'
         <div className="patrick-top-left">
             <PatrickTopCard />
         </div>
-        <div className="patrick-picture-card">
-        <img 
-            src="../../assets/Patrick-Headshot.jpg" 
-            class="patrick-profile-image"
-        >
+        <div
+            @mouseenter="$event => hover = true" @mouseleave="$event => hover = false"
+            className="patrick-picture-card">
+            <a href="https://www.linkedin.com/in/patrickyuson/"><img 
+                src="../../assets/Patrick-Headshot.jpg" 
+                class="patrick-profile-image"
+            ></a>
         </div>
+        <p v-if="hover" className="patrick-vertical-text">Click for Linkedin ⬇️</p>
     </div>
 </template>
 
@@ -43,5 +49,9 @@ import PatrickTopCard from './PatrickTopCard.vue'
     border-radius: 200px;
     box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     transition: transform 0.3s ease-in-out;
+}
+
+.patrick-vertical-text {
+    transform: rotate(90deg);
 }
 </style>

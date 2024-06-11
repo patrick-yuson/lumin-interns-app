@@ -7,7 +7,7 @@ import PatrickInterestFields from './PatrickInterestFields.vue';
             <h1 className="patrick-header">Patrick Yuson</h1>
             <div className="patrick-subheader">Software Engineering Intern at Lumin</div>
                 <div className="patrick-card-body">
-                    <p>Hey! My name is Patrick Yuson, and I'm a rising Fourth Year at the University of Virginia. I am currently pursuing a double major in Computer Science and Cognitive Science.</p>
+                    <p>Hey! My name is Patrick Yuson, and I'm a rising Fourth Year at the University of Virginia. I am currently pursuing a double major in Computer Science and Cognitive Science. In my free time I love to play volleyball, hang out with friends, and listen to music!</p>
                 </div>
             <PatrickInterestFields />
         </div>
