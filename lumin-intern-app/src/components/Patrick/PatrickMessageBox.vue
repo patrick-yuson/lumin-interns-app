@@ -17,6 +17,22 @@ const messages = ref([
 ])
 
 const clicked = ref(false)
+const submitted = ref(false)
+const author = ref('')
+const message = ref('')
+const errorHandle = ref(false);
+
+const handleSubmit = (e) => {
+    if (author.value != '' && message.value != '') {
+        messages.value.push({ author: author.value, message: message.value })
+        author.value = ''
+        message.value = ''
+        clicked.value = false
+        submitted.value = true;
+    } else {
+        errorHandle.value = true;
+    }
+}
 </script>
 
 <template>
@@ -32,12 +48,17 @@ const clicked = ref(false)
         </div>
         <div className="patrick-message-button-div">
             <button @click="$event => clicked = !clicked" className="patrick-leave-message-button" v-if="clicked == false">Leave a Message</button>
-            <form v-if="clicked == true">
+            <form v-if="clicked == true" @submit.prevent="handleSubmit(e)">
                 <div className="patrick-form-div">
-                    <label>Author</label>
-                    <input></input>
-                    <label>Message</label>
-                    <input></input>
+                    <label for="author">Author</label>
+                    <input v-model="author" id="author" className="patrick-form-author-input" type="text"></input>
+
+                    <label for="message" className="patrick-form-message-label">Message</label>
+                    <textarea v-model="message" id="message" className="patrick-form-message-input" type="text"></textarea>
+                </div>
+                <div className="patrick-form-submit">
+                    <button type="submit" className="patrick-leave-message-button">Submit</button>
+                    <div className="patrick-form-submission-error" v-if="errorHandle == true">Both fields must be filled.</div>
                 </div>
             </form>
         </div>
@@ -90,5 +111,40 @@ const clicked = ref(false)
     flex-direction: column;
     justify-content: left;
     align-items: left !important;
+}
+
+.patrick-form-author-input {
+    margin-top: 10px;
+    padding: 10px;
+    width: 480px;
+    font-size: 16px;
+}
+
+.patrick-form-message-input {
+    margin-top: 10px;
+    padding: 10px;
+    font-size: 16px;
+    max-height: 400px;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    white-space: normal;
+    font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+}
+
+.patrick-form-message-label {
+    margin-top: 10px;
+}
+
+.patrick-form-submit {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.patrick-form-submission-error {
+    margin: 10px;
+    color: red;
 }
 </style>
