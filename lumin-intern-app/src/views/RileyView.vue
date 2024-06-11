@@ -83,7 +83,12 @@
                     </ul>
                     <p>What's your favorite? Add it to my list</p>
                     <input 
-                        v-model="newFav" type="text" class = "input" placeholder="Type Here">
+                        v-model.trim="newFav"
+                        v-on:keyup.enter="favorites.push({id: favorites.length + 1, label: newFav})" 
+                        type="text" 
+                        className = "input" 
+                        placeholder="Type Here"
+                    >
                     <button 
                         v-on:click="favorites.push({id: favorites.length + 1, label: newFav})">
                         Submit
