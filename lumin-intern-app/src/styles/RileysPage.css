@@ -1,0 +1,10 @@
+@import url(ColorPalette.css);
+
+body{
+    background-color: var(--white1);
+}
+
+.page-container{
+    width: 90%;
+    margin: 0 auto;
+}
