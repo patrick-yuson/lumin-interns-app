@@ -20,6 +20,7 @@ import PatrickTopCard from './PatrickTopCard.vue'
 .patrick-top {
     display: flex;
     align-items: center;
+    justify-content: space-around;
     margin-top: 30px;
 }   
 
