@@ -6,7 +6,6 @@
     import mainCard from '../components/Riley/mainCard.vue';
     import favorites from '../components/Riley/favorites.vue';
     import counter from '../components/Riley/counter.vue';
-    import copyMe from '../components/Riley/copyMe.vue';
     import { ref, onMounted } from 'vue';
     const isHovered = ref(false);
     const greetingMsg = "Hello World...";
@@ -48,9 +47,9 @@
         color: var(--black4);
     }
 
-    .hovered{
-        border: 1px solid light grey;
-        border-radius: 5px;
+    .click-msg{
+        color: var(--lightgreen5);
+        display:inline-block;
     }
     
     .page-container{
@@ -102,6 +101,9 @@
         border-radius: 5px;
         border: 1px solid grey;
     }
+    .back-button-riley:hover{
+        background-color: var(--yellow5);
+    }
     .right-container{
         flex: 1;
         padding-left: 50px;
@@ -132,11 +134,11 @@
                         </div>
                     </div>
 
-                    <div class="notHovered" v-if="!isHovered">
+                    <div v-if="!isHovered">
                         <br />
                     </div>
-                    <div class="hovered" v-if="isHovered">
-                        You can click here 
+                    <div class="click-msg" v-if="isHovered">
+                        You can click there 
                     </div>
                     <div class = "title2" @mouseover="isHovered = true" @mouseout="isHovered = false">
                         <a class = "myFavThings" href="https://www.youtube.com/watch?v=2G6dd7ikrXs" target="_blank">These are a few of my favorite things:</a>
@@ -145,12 +147,7 @@
                     <favorites />
 
                     <div class = "title2">
-                            And a mysterious textbox...
-                    </div>
-                    <copyMe />
-
-                    <div class = "title2">
-                            And a mysterious button...
+                            And a counter made with Pinia : )
                     </div>
                     <counter />
     
