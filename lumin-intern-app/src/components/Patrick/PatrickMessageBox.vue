@@ -97,6 +97,7 @@ const handleSubmit = (e) => {
 
 .patrick-leave-message-button:hover {
     background-color: var(--yellow5);
+    cursor: pointer;
 }
 
 .patrick-message-button-div {
