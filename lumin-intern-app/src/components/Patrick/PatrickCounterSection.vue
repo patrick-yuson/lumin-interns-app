@@ -13,26 +13,36 @@ const handleDuplicate = () => {
 </script>
 
 <template>
-    <div class="patrick-counter-div">
-        <div class="patrick-text-div">
-            <div class="patrick-counter-text">
-                This counter is being accessed through Pinia:
+    <div class="patrick-lowest-div">
+        <div class="patrick-counter-div">
+            <div class="patrick-text-div">
+                <div class="patrick-counter-text">
+                    This counter is being accessed through Pinia:
+                </div>
+                <div class="patrick-count">
+                    {{ count }}
+                </div>
+                <PatrickCounterButtons @duplicate="handleDuplicate"/>
             </div>
-            <div class="patrick-count">
-                {{ count }}
-            </div>
-            <PatrickCounterButtons @duplicate="handleDuplicate"/>
         </div>
     </div>
 </template>
 
 <style scoped>
 @import '../../styles/ColorPalette.css';
+
+.patrick-lowest-div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 75px;
+}
+
 .patrick-counter-div {
     height: 100px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     width: 1220px;
-    margin: 75px 0px 0px 100px; /* top right bottom left */
+    /* margin: 75px 0px 0px 100px; top right bottom left */
     border-radius: 30px;
     padding: 30px;
     display: flex;

@@ -12,7 +12,7 @@ const messages = ref([
     },
     {
         author: 'Riley',
-        message: '^ Me too bruh'
+        message: '^ Me too??'
     }
 ])
 

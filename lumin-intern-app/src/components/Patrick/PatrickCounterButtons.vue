@@ -1,6 +1,6 @@
 <script setup>
 import PatrickCounterButton from './PatrickCounterButton.vue'
-import { ref, defineEmits } from 'vue'
+import { ref } from 'vue'
 import { useCounterStore } from '@/stores/counter'
 
 const buttonTypes = ref([
