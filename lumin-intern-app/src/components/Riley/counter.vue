@@ -1,5 +1,5 @@
 <script setup>
-    import { ref, computed, reactive } from 'vue'
+    import { reactive } from 'vue'
     const state = reactive({count: 0})
     const increment = () => {
         state.count++
@@ -12,6 +12,7 @@
     border-radius: 10px;
     text-align:center;
     margin:10px;
+    padding:10px;
 }
 
 .count{
@@ -20,12 +21,15 @@
     border: 2px solid grey;
     border-radius:10px;
     background-color: var(--lightgreen1);
-    margin:5px;
+    margin:10px;
 }
 
 .click-button{
-    background-color: var(--lightgreen5);
-    margin:5px;
+    background-color: var(--lightgreen1);
+    padding:5px;
+    color:var(--black5);
+    border: 1px solid grey;
+    margin: 10px;
 }
 
 </style>

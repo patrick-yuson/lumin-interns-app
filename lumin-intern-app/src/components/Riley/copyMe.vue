@@ -1,5 +1,5 @@
 <script setup>
-    import { ref} from 'vue';
+    import {ref} from 'vue';
     const msg = ref("")
 </script>
 
@@ -12,6 +12,10 @@
     }
     .copytext{
         text-align: center;
+        border:1px solid grey;
+        background-color: whitesmoke;
+        border-radius:5px;
+        box-shadow: inset;
     }
 </style>
 
