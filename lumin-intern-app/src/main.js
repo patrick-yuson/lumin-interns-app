@@ -6,9 +6,9 @@ import App from './App.vue'
 import router from './router'
 
 const app = createApp(App)
-const pinia = createPinia()
+const pinia = createPinia() // Create the Pinia instance
 
+app.use(pinia) // Use the Pinia instance
 app.use(router)
-app.use(pinia)
 
 app.mount('#app')
